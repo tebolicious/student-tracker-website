@@ -3,14 +3,14 @@ function setupMobileMenu() {
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
 
-    if (hamburger) {
+    if (hamburger && navLinks) {
         hamburger.addEventListener('click', function () {
             navLinks.classList.toggle('active');
             hamburger.classList.toggle('active');
         });
 
         // Close menu when a link is clicked
-        document.querySelectorAll('#navLinks a').forEach(link => {
+        navLinks.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', function () {
                 navLinks.classList.remove('active');
                 hamburger.classList.remove('active');
@@ -121,28 +121,6 @@ document.addEventListener('DOMContentLoaded', function () {
     setupContactForm();
     console.log('Student Tracker website loaded');
 });
-
-// Mobile menu toggle (if you add a hamburger menu later)
-function setupMobileMenu() {
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
-
-    if (hamburger) {
-        hamburger.addEventListener('click', function () {
-            navLinks.classList.toggle('active');
-            hamburger.classList.toggle('active');
-        });
-
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', function () {
-                navLinks.classList.remove('active');
-                hamburger.classList.remove('active');
-            });
-        });
-    }
-}
-
-setupMobileMenu();
 
 // Throttle scroll events for better performance
 function throttle(func, limit) {
