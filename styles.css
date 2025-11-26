@@ -148,6 +148,10 @@ body {
 }
 
 .hero-content h1 {
+        padding: 0 1rem;
+    }
+
+    .hero-content h1 {
     font-size: 3.5rem;
     font-weight: 800;
     margin-bottom: 1rem;
@@ -580,9 +584,6 @@ body {
 
     .hero-buttons {
         flex-direction: column;
-    }
-
-    .btn {
         width: 100%;
         text-align: center;
         padding: 10px 20px;
