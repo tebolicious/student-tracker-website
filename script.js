@@ -8,14 +8,13 @@ function setupMobileMenu() {
             navLinks.classList.toggle('active');
             hamburger.classList.toggle('active');
         });
-
-        // Close menu when a link is clicked
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', function () {
-                navLinks.classList.remove('active');
-                hamburger.classList.remove('active');
-            });
-        });
+        // Do NOT auto-close menu on link click
+        // navLinks.querySelectorAll('a').forEach(link => {
+        //     link.addEventListener('click', function () {
+        //         navLinks.classList.remove('active');
+        //         hamburger.classList.remove('active');
+        //     });
+        // });
     }
 }
 

@@ -520,6 +520,48 @@ body {
 }
 
 @media (max-width: 768px) {
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background-color: var(--white);
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 1rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        z-index: 999;
+        width: 100%;
+    }
+    .nav-links.active {
+        max-height: 500px;
+    }
+    .nav-links li {
+        display: block;
+    }
+    .nav-links a {
+        padding: 0.8rem 1rem;
+        display: block;
+        border-radius: 5px;
+    }
+    .nav-links a:hover {
+        background-color: var(--secondary-color);
+    }
+    body {
+        padding-top: 70px;
+    }
+
     .hamburger {
         display: flex;
     }
