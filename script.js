@@ -125,6 +125,8 @@ document.addEventListener('DOMContentLoaded', function () {
         logoLink.addEventListener('click', function (e) {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: 'smooth' });
+            const ann = document.getElementById('srAnnouncer');
+            if (ann) ann.textContent = 'Returned to top of page.';
         });
     }
 });
@@ -150,6 +152,8 @@ document.addEventListener('DOMContentLoaded', function () {
         // Click to scroll to top
         scrollBtn.addEventListener('click', function () {
             window.scrollTo({ top: 0, behavior: 'smooth' });
+            const ann = document.getElementById('srAnnouncer');
+            if (ann) ann.textContent = 'Returned to top of page.';
         });
 
         // Initial check in case page is loaded scrolled
