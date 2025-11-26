@@ -119,6 +119,14 @@ document.addEventListener('DOMContentLoaded', function () {
     setupMobileMenu();
     setupContactForm();
     console.log('Student Tracker website loaded');
+    // Logo click: scroll to top
+    const logoLink = document.querySelector('.logo-link');
+    if (logoLink) {
+        logoLink.addEventListener('click', function (e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
 });
 
 // Scroll-to-top button behavior
