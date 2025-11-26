@@ -652,12 +652,13 @@ body {
 
 @media (max-width: 768px) {
     .navbar {
-        position: fixed;
+        position: sticky;
         top: 0;
         left: 0;
         right: 0;
         width: 100%;
         z-index: 1000;
+        background-color: var(--white);
     }
     .nav-links {
         position: fixed;
@@ -730,9 +731,7 @@ body {
         background-color: var(--secondary-color);
     }
 
-    .navbar {
-        position: relative;
-    }
+    /* Keep navbar sticky on small screens; do not override to relative */
 
     .hero .container {
         grid-template-columns: 1fr;
