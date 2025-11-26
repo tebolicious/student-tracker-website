@@ -101,6 +101,37 @@ body {
     box-shadow: 0 5px 15px rgba(107, 76, 154, 0.3);
 }
 
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+    transition: var(--transition);
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
 /* Hero Section */
 .hero {
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
@@ -466,23 +497,85 @@ body {
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+    .hero .container {
+        gap: 2rem;
+    }
+
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+
+    .app-icon {
+        height: 250px;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+}
+
 @media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-wrapper {
+        justify-content: space-between;
+    }
+
     .nav-links {
-        gap: 1rem;
-        font-size: 0.9rem;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background-color: var(--white);
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 1rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+
+    .nav-links.active {
+        max-height: 400px;
+    }
+
+    .nav-links a {
+        padding: 0.8rem;
+        display: block;
+        border-radius: 5px;
+    }
+
+    .nav-links a:hover {
+        background-color: var(--secondary-color);
+    }
+
+    .navbar {
+        position: relative;
     }
 
     .hero .container {
         grid-template-columns: 1fr;
-        padding: 40px 0;
+        padding: 30px 0;
+    }
+
+    .hero {
+        padding: 50px 0;
     }
 
     .hero-content h1 {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
 
     .slogan {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
     }
 
     .hero-buttons {
@@ -492,63 +585,250 @@ body {
     .btn {
         width: 100%;
         text-align: center;
+        padding: 10px 20px;
+        font-size: 0.95rem;
     }
 
     .app-icon {
         height: 200px;
     }
 
+    .features,
+    .objectives,
+    .clients {
+        padding: 50px 0;
+    }
+
     .features h2,
     .objectives h2,
     .clients h2 {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+    }
+
+    .section-subtitle {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .features-grid {
+        gap: 1.5rem;
+    }
+
+    .feature-card {
+        padding: 1.5rem;
+    }
+
+    .feature-card i {
         font-size: 2rem;
+    }
+
+    .feature-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .objectives-grid,
+    .clients-grid {
+        gap: 1.5rem;
+    }
+
+    .objective-card {
+        padding: 1.5rem;
+    }
+
+    .objective-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .client-card {
+        padding: 1.5rem;
+    }
+
+    .client-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .client-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 2rem;
+    }
+
+    .cta {
+        padding: 40px 0;
+    }
+
+    .cta h2 {
+        font-size: 1.5rem;
+    }
+
+    .cta p {
+        font-size: 1rem;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .footer {
+        padding: 2rem 0 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        height: 40px;
+    }
+
+    .nav-links {
+        top: 60px;
+    }
+
+    .hero {
+        padding: 30px 0;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .slogan {
+        font-size: 0.95rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .hero-description {
+        font-size: 0.9rem;
+        margin-bottom: 1.2rem;
+        line-height: 1.5;
+    }
+
+    .btn {
+        padding: 10px 16px;
+        font-size: 0.9rem;
+    }
+
+    .app-icon {
+        height: 150px;
+    }
+
+    .container {
+        padding: 0 12px;
+    }
+
+    .features,
+    .objectives,
+    .clients {
+        padding: 30px 0;
+    }
+
+    .features h2,
+    .objectives h2,
+    .clients h2 {
+        font-size: 1.3rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .section-subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
     }
 
     .features-grid,
     .objectives-grid,
     .clients-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .cta h2 {
-        font-size: 1.8rem;
-    }
-
-    .footer-content {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 480px) {
-    .nav-wrapper {
-        flex-direction: column;
         gap: 1rem;
-    }
-
-    .nav-links {
-        flex-direction: column;
-        gap: 0.5rem;
-        width: 100%;
-        text-align: center;
-    }
-
-    .hero-content h1 {
-        font-size: 2rem;
-    }
-
-    .slogan {
-        font-size: 1rem;
-    }
-
-    .features h2,
-    .objectives h2,
-    .clients h2 {
-        font-size: 1.5rem;
+        grid-template-columns: 1fr;
     }
 
     .feature-card,
     .objective-card,
     .client-card {
-        padding: 1.5rem;
+        padding: 1rem;
+    }
+
+    .feature-card i {
+        font-size: 1.8rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .feature-card h3 {
+        font-size: 1rem;
+        margin-bottom: 0.6rem;
+    }
+
+    .feature-card p,
+    .objective-card p {
+        font-size: 0.9rem;
+    }
+
+    .objective-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .objective-card h3 {
+        font-size: 1rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .client-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.8rem;
+    }
+
+    .client-card h3 {
+        font-size: 1rem;
+    }
+
+    .cta {
+        padding: 30px 0;
+    }
+
+    .cta h2 {
+        font-size: 1.3rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .cta p {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+
+    .footer-section h4 {
+        font-size: 1rem;
+    }
+
+    .footer-section p,
+    .footer-section a {
+        font-size: 0.85rem;
+    }
+
+    .social-links a {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 320px) {
+    .hero-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .btn {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+    }
+
+    .features h2,
+    .objectives h2,
+    .clients h2 {
+        font-size: 1.1rem;
     }
 }
