@@ -121,6 +121,34 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log('Student Tracker website loaded');
 });
 
+// Scroll-to-top button behavior
+(function () {
+    const SCROLL_SHOW_PX = 300;
+    const scrollBtn = document.getElementById('scrollTopBtn');
+
+    function toggleScrollBtn() {
+        if (!scrollBtn) return;
+        if (window.scrollY > SCROLL_SHOW_PX) {
+            scrollBtn.classList.add('show');
+        } else {
+            scrollBtn.classList.remove('show');
+        }
+    }
+
+    if (scrollBtn) {
+        // Show/hide on scroll (throttled)
+        window.addEventListener('scroll', throttle(toggleScrollBtn, 150));
+
+        // Click to scroll to top
+        scrollBtn.addEventListener('click', function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Initial check in case page is loaded scrolled
+        toggleScrollBtn();
+    }
+})();
+
 // Throttle scroll events for better performance
 function throttle(func, limit) {
     let inThrottle;
