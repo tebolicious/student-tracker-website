@@ -408,6 +408,73 @@ body {
     color: var(--text-light);
 }
 
+/* Contact Section */
+.contact {
+    padding: 80px 0;
+    background-color: var(--secondary-color);
+}
+
+.contact h2 {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+}
+
+.contact-info {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+}
+
+.contact-info p {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.7rem;
+    border: 1px solid var(--secondary-color);
+    border-radius: 6px;
+    font-size: 1rem;
+    background: var(--secondary-color);
+    color: var(--text-color);
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.contact-form .btn {
+    width: 100%;
+    margin-top: 1rem;
+}
+
 /* CTA Section */
 .cta {
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
