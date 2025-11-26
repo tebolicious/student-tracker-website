@@ -50,7 +50,7 @@ document.querySelectorAll('.download-btn, .btn-primary, .btn-light').forEach(but
             (this.textContent.includes('Download') && this.classList.contains('btn-light'))) {
             e.preventDefault();
             // Redirect to Google Play Store (you can update this URL)
-            window.location.href = 'https://play.google.com/store';
+            window.location.href = 'https://play.google.com/store/apps/details?id=za.co.studenttracker&hl=en';
             // Or show a modal/alert
             // alert('Redirecting to Google Play Store...');
         }
