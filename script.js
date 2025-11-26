@@ -1,3 +1,24 @@
+// Mobile Menu Toggle
+function setupMobileMenu() {
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+
+    if (hamburger) {
+        hamburger.addEventListener('click', function () {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        // Close menu when a link is clicked
+        document.querySelectorAll('#navLinks a').forEach(link => {
+            link.addEventListener('click', function () {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+    }
+}
+
 // Smooth scroll functionality
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -96,6 +117,7 @@ function setupContactForm() {
 
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', function () {
+    setupMobileMenu();
     setupContactForm();
     console.log('Student Tracker website loaded');
 });
